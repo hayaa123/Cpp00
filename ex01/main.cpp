@@ -8,11 +8,11 @@ void non_empty_input(std::string *var, std::string message)
         std::cout << message;
         std::getline(std::cin , *var);
         std::cout << std::endl;
-        if((*var).empty())
+        if((*var).empty() && !std::cin.eof())
         {
             std::cout << "The programm does not accepts empty inputs, try again." << std::endl;
         }
-    } while((*var).empty());
+    } while((*var).empty() && !std::cin.eof());
 }
 
 Contact handle_add()
@@ -24,11 +24,16 @@ Contact handle_add()
     std::string dark_sec;
 
     std::cout << "please enter the following fields:" << std::endl;
-    non_empty_input(&fn, "first name:");
-    non_empty_input(&ln, "last name:");
-    non_empty_input(&nick, "nickname:");
-    non_empty_input(&phone_num, "phone number:");
-    non_empty_input(&dark_sec, "darkest secret:");
+    if(!std::cin.eof())
+        non_empty_input(&fn, "first name:");
+    if(!std::cin.eof())
+        non_empty_input(&ln, "last name:");
+    if(!std::cin.eof())
+        non_empty_input(&nick, "nickname:");
+    if(!std::cin.eof())
+        non_empty_input(&phone_num, "phone number:");
+    if(!std::cin.eof())
+        non_empty_input(&dark_sec, "darkest secret:");
     return (Contact(fn,ln,nick,phone_num, dark_sec));
 }
 
