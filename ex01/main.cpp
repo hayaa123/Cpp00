@@ -39,6 +39,8 @@ Contact handle_add()
 
 int is_all_num(const std::string& str)
 {
+    if (str.empty())
+        return (0);
     for(size_t i = 0; i < str.size(); i++)
     {
         if(!std::isdigit(str[i]))
@@ -77,7 +79,7 @@ int main()
     std::cout << "_________________________________________________" << std::endl;
     std::cout << std::endl;
     std::cout << "Welcome to the crappy awesome phonebook software" << std::endl;
-    std::cout << "In this progeamm you can add contacts and perform a search on them :D." << std::endl;
+    std::cout << "In this programm you can add contacts and perform a search on them :D." << std::endl;
     std::cout << "_________________________________________________" << std::endl;
     std::cout << std::endl;
     std::cout << "The accepted commands are (ADD, SEARCH, and EXIT)" << std::endl;

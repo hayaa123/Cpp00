@@ -72,12 +72,12 @@ void PhoneBook::display_contacts(void)
 }
 int PhoneBook::is_empty(void)
 {
-    return (this->_index == 0);
+    return (this->_size == 0);
 }
 
 void PhoneBook::display_contact(int index)
 {
-    if(index > this->_index - 1)
+    if(index >= this->_size)
     {
         std::cout<< "There is no contact informations at this index yet" << std::endl;
         return;
@@ -86,5 +86,5 @@ void PhoneBook::display_contact(int index)
     std::cout << this->_contacts[index].get_last_name() << std::endl;
     std::cout << this->_contacts[index].get_nickname() << std::endl;
     std::cout << this->_contacts[index].get_phone_number() << std::endl;
-    std::cout << this->_contacts[index].get_darkest_secet() << std::endl;
+    std::cout << this->_contacts[index].get_darkest_secret() << std::endl;
 }

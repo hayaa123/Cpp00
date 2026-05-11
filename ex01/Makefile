@@ -1,4 +1,4 @@
-NAME = phone_book
+NAME = PhoneBook
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = Contact.cpp PhoneBook.cpp main.cpp
